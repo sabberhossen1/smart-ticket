@@ -6,26 +6,12 @@ for(const seat of allSeat){
     const seatCount=document.getElementById('seatCount').innerText;
      const seatCountParseint=parseInt(seatCount)
      
-     if(seatCountParseint>7){
-        alert('All seats booked')
+     if(seatCountParseint>=4){
+        alert('you already four sit booked')
      }
      else{
         document.getElementById('seatCount').innerText=seatCountParseint+1;
-     }
-
-     const seatLeft=document.getElementById('seat-left').innerText;
-     const seatLeftParseint=parseInt(seatLeft);
-     if(seatLeftParseint <=0){
-        alert('All seats booked');
-     }
-     else{
-        document.getElementById('seat-left').innerText=seatLeftParseint-1
-     }
-     const rightSit = e.target;
-    rightSit.style.backgroundColor = 'green';
-    
-
-     const selectContainer=document.getElementById('seatName')
+        const selectContainer=document.getElementById('seatName')
      const seatName=e.target.innerText;
      const p=document.createElement('p')
      p.innerText=seatName;
@@ -41,6 +27,15 @@ for(const seat of allSeat){
      classNameContainer.appendChild(p2)
      selectContainer.appendChild(p)
 
+     const rightSit = e.target;
+    rightSit.style.backgroundColor = 'green';
+
+    const seatLeft=document.getElementById('seat-left').innerText;
+     const seatLeftParseint=parseInt(seatLeft);
+     document.getElementById('seat-left').innerText=seatLeftParseint-1;
+
+
+
      const totalPrice=document.getElementById('totalPrice').innerText;
      const totalPriceParsInt=parseInt(totalPrice)
     const OneTicketPrice=550
@@ -50,6 +45,8 @@ for(const seat of allSeat){
      const grandTotal=document.getElementById('grandTotal').innerText
      const grandTotalParseInt=parseInt(grandTotal)
      document.getElementById('grandTotal').innerText=grandTotalParseInt+OneTicketPrice
+     }
+
      
      console.log(grandTotal);
     })
